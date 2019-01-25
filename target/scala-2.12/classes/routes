@@ -1,0 +1,24 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+POST /books              controllers.BooksController.createbook()
+GET  /books/:Id          controllers.BooksController.getbookbyid(Id: Integer)
+PUT  /books/:Id          controllers.BooksController.updatebookbyid(Id: Integer)
+DELETE /books/:Id        controllers.BooksController.deletebookbyid(Id: Integer)
+GET  /books              controllers.BooksController.getallbooks()
+
+GET /HelloWorld                     controllers.HelloWorldControl.HelloWorld
+GET /Hellotazz                      controllers.HelloWorldControl.Hellotazz
+GET /Hellos/:name                   controllers.HelloWorldControl.Hellos(name: String)
+GET /HelloTazz/:name               controllers.HelloWorldControl.HelloTazz(name: String, age: Integer?=17)
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index
+# An example controller showing how to use dependency injection
+GET     /count                      controllers.CountController.count
+# An example controller showing how to write asynchronous code
+GET     /message                    controllers.AsyncController.message
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
